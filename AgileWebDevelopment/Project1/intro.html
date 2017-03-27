@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+	<title>Sports Partner</title>
+	<link rel="stylesheet" type="text/css" href="./css/style.css">
+
+	<meta charset="UTF-8">
+
+</head>
+<body>
+
+
+
+		<header>
+			<h1>Sports Partner</h1>
+		</header>
+
+
+		<nav>
+			<ul>
+
+				<li><a class="active" href="index.html">Home</a></li>
+				<li><a href="intro.html">Introduction</a></li>
+				<li style="float: right;"><a href="aboutus.html" >About</a></li>
+			</ul>
+		</nav>
+
+		<main>
+			<div class="leftside">
+
+			</div>
+			<div class="content">
+				<h2>Introduction</h2>
+				<h4>Project Name</h4>
+				<p><span>Sports Partner</span>
+				<h4>Why we do this</h4>
+				<p>Peopel are paying more and more attention to their health.</p>
+				<p>Some people want to start exercising. However, with no experience, they do not know where to start.</p>
+				<p>Some people execrise occasionally. Without partner, they can not keep doing this.</p>
+				<p>Some people are really good at this. However, they feel a bit lonely while they do not have a partner</p>
+				<p><span>So we decide to do this:</span></p>
+				<p>Match up the guys who want to execrise</p>
+				<p>For people who just start, they can find a partner to help them.</p>
+				<p>For people who can to keep doing this, they can have a partner to encourage one another.</p>
+				<p>For people who really special at it, they can have a friend, or even make some money.</p>
+				<h4>How it works</h4>
+				<p>First, people who want a partner need to register on the website.</p>
+				<p>They need to fill a form about their basic information, and what they like to do. Eg. Basketball, Football or something else.</p>
+				<p>Then their information will be stored in the database.</p>
+				<p>And after they register successfully, then they can choose the conditions about the matching.</p>
+				<p>For example, if they want to find a partner to run, they can choose to match people who are 5 km around and want to have a partner to run. Or 10 km around.</p>
+				<p>Then there will be a list of people for they to choose, and send message to ask whether they want to run at a specific time.</p>
+				<p>This is the basic information about how it works.</p>
+			</div>
+			<div class="rightside">
+			</div>
+
+
+		</main>
+
+
+
+		<footer> Copyright&copy;Sports Partner | TIME: <span id="time"></span> | Last Modified at <span id="lastmodified"></span></footer>
+
+
+<script>
+
+	var today = new Date();
+	var today = today.toLocaleTimeString();
+	document.getElementById('time').innerHTML=today;
+
+
+    var lastmodified = new Date(document.lastModified);
+    document.getElementById("lastmodified").innerHTML = lastmodified.toLocaleDateString();
+
+</script>
+
+
+
+
+
+</body>
+</html>

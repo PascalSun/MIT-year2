@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+	<title>Sports Partner</title>
+	<link rel="stylesheet" type="text/css" href="./css/style.css">
+
+	<meta charset="UTF-8">
+
+</head>
+<body>
+
+
+
+		<header>
+			<h1>Sports Partner</h1>
+		</header>
+
+
+		<nav>
+			<ul>
+
+				<li><a class="active" href="index.html">Home</a></li>
+				<li><a href="intro.html">Introduction</a></li>
+				<li style="float: right;"><a href="aboutus.html" >About</a></li>
+			</ul>
+		</nav>
+
+		<main>
+			<div class="leftside">
+
+			</div>
+			<div class="content">
+				<h2>About Me</h2>
+				<h4>Basic Information</h4>
+				<p>Name: <span>QIANG SUN</span></p>
+				<p>Student ID: 21804416 </p>
+				<p>Lecutre: CITS5505</p>
+				<p>Group ID: 29 </p>
+				<h4>Reference:</h4>
+				<p>1. W3C school, link: https://www.w3schools.com/default.asp</p>
+				<p>2. Google Map Api and Documentation, link: https://developers.google.com/maps/documentation/javascript/examples/places-autocomplete-addressform</p>
+				<p>3. CITS3403 web information, link: http://teaching.csse.uwa.edu.au/units/CITS3403/index.php?fname=project-teams&project=yes </p>
+				<p>4. About Layouts from bootstrap, link: http://getbootstrap.com/css/</p>
+				<p>5. Stack Overflow</p>
+			
+			</div>
+			<div class="rightside">
+			</div>
+
+
+		</main>
+
+
+
+		<footer> Copyright&copy;Sports Partner | TIME: <span id="time"></span> | Last Modified at <span id="lastmodified"></span></footer>
+
+
+<script>
+
+	var today = new Date();
+	var today = today.toLocaleTimeString();
+	document.getElementById('time').innerHTML=today;
+
+
+    var lastmodified = new Date(document.lastModified);
+    document.getElementById("lastmodified").innerHTML = lastmodified.toLocaleDateString();
+
+</script>
+
+
+
+
+
+</body>
+</html>
