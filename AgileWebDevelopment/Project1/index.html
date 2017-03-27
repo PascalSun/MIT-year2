@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+	<title>Sports Partner</title>
+	<link rel="stylesheet" type="text/css" href="./css/style.css">
+	<meta charset="UTF-8">
+<script>
+
+
+function validate_email(field,alerttxt)
+{
+	with (field)
+	{
+		apos=value.indexOf("@")
+		dotpos=value.lastIndexOf(".")
+		if (apos<1||dotpos-apos<2) 
+		{
+			alert(alerttxt);
+			return false
+			}
+		else 
+		{
+			return true
+			}
+	}
+}
+
+function isName(str){
+    var re = /^[a-zA-Z0-9]d*/; 
+    if(re.test(str))
+	{
+		return true;
+        }
+	else{
+		return false;
+    }
+}
+
+function validateForm()
+{
+    if(isName(document.myForm.username.value)==false)
+	{
+	   alert("Please enter the right username.");
+	   document.myForm.username.focus();
+	   return false;
+    }
+
+   if(validate_email(email,"Please Enter your email address")==false)
+   {
+	   email.focus();
+	   return false
+	}
+	
+   if( document.myForm.password.value == "" )
+   {
+     alert( "Please Enter Password" );
+     document.myForm.password.focus() ;
+     return false;
+   }
+
+   if(document.myForm.repassword.value == "")
+   {
+	   alert("Please Re-enter Password");
+	   document.myForm.repassword.focus();
+	   return false;
+   }
+
+   if(document.myForm.password.value!=document.myForm.repassword.value)
+   {
+       alert("Please enter the same password");
+       document.myForm.password.focus();
+       return false;
+   }
+   if(document.myForm.age.value==''){
+       alert("Please enter your age");
+       document.myForm.age.focus();
+       return false;
+   }
+
+   if(document.myForm.address.value==""){
+       alert("Please enter your address");
+       document.myForm.address.focus();
+       return false;
+   }
+   else{
+	   alert('All Good');
+	   return true;
+   }
+
+}
+</script>
+
+</head>
+<body>
+
+
+
+		<header>
+			<h1>Sports Partner</h1>
+		</header>
+
+
+		<nav>
+			<ul>
+
+				<li><a class="active" href="index.html">Home</a></li>
+				<li><a href="intro.html">Introduction</a></li>
+				<li style="float: right;"><a href="aboutus.html" >About</a></li>
+			</ul>
+		</nav>
+
+		<main>
+			<div class="leftside">
+
+			</div>
+			<div class="content">
+				<h3> Sign In </h3>
+				<div class="form">
+					<form name = "myForm" onsubmit="return validateForm()" >
+					    <label for="username">Username</label>
+	    				<input type="text" id="username" name="username" placeholder="Choose a username..">
+
+		    			<label for="email">Email</label>
+		    			<input type="email" id="email" name="email" placeholder="Enter your email address..">
+
+		    			<label for="password">Password</label>
+		    			<input type="password" id="password" name="password" placeholder="Enter your password..">
+
+		    			<label for="repassword">Re-enter Password</label>
+		    			<input type="password" id="repassword" name="repassword" placeholder="Re Enter your password..">
+
+
+		    			<label for="sex">Sex</label>
+		    	        <input type="radio" name="sex" id = "sex" value="MR." checked> MR.<br>
+ 						<input type="radio" name="sex" id = "sex2" value="MS."> MS.<br><br>
+		    			<label for="age">Age</label>
+		    			<input type="number" id="age" name="age" placeholder="Enter your age">
+
+		    			<label for="sport">Favorite sport (You can choose more than one)</label>
+		    	        <input type="checkbox" name="sport" id = "sport" value="1" checked> Running<br>
+ 						<input type="checkbox" name="sport" id = "sport2" value="2"> Basketball<br>
+						<input type="checkbox" name="sport" id = "sport3" value="3"> Football<br>
+						<input type="checkbox" name="sport" id = "sport4" value="4"> Badminton<br>
+						<input type="checkbox" name="sport" id = "sport5" value="5"> Tennis<br>
+						<input type="checkbox" name="sport" id = "sport6" value="6"> Swimming<br><br>
+
+ 						<label for="degree">Skill Degree</label>
+		    			<input type="range" id="degree" name="degree"  min="0" max="10">
+		    			<label for="address">Address</label>
+		    			<input type="text" id="address" name="address" onFocus="geolocate()" placeholder="Enter the address you live in..">
+
+		  
+		    			<input type="submit" value="Submit">
+		    		</form>
+	    		</div>
+
+
+
+
+			</div>
+			<div class="rightside">
+			</div>
+
+
+		</main>
+
+
+
+		<footer> Copyright&copy;Sports Partner | TIME: <span id="time"></span> | Last Modified at <span id="lastmodified"></span></footer>
+
+
+<script>
+
+	var today = new Date();
+	var today = today.toLocaleTimeString();
+	document.getElementById('time').innerHTML=today;
+
+
+    var lastmodified = new Date(document.lastModified);
+    document.getElementById("lastmodified").innerHTML = lastmodified.toLocaleDateString();
+
+</script>
+
+<script>
+
+	// This is from Google Map Javascript libraries: https://developers.google.com/maps/documentation/javascript/examples/places-autocomplete-addressform
+      // This example displays an address form, using the autocomplete feature
+      // of the Google Places API to help users fill in the information.
+
+      // This example requires the Places library. Include the libraries=places
+      // parameter when you first load the API. For example:
+      // <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&libraries=places">
+
+      var placeSearch, autocomplete;
+
+      function initAutocomplete() {
+        // Create the autocomplete object, restricting the search to geographical
+        // location types.
+        autocomplete = new google.maps.places.Autocomplete(
+            /** @type {!HTMLInputElement} */(document.getElementById('address')),
+            {types: ['geocode']});
+
+        // When the user selects an address from the dropdown, populate the address
+        // fields in the form.
+        autocomplete.addListener('place_changed', fillInAddress);
+      }
+
+
+      // Bias the autocomplete object to the user's geographical location,
+      // as supplied by the browser's 'navigator.geolocation' object.
+      function geolocate() {
+        if (navigator.geolocation) {
+          navigator.geolocation.getCurrentPosition(function(position) {
+            var geolocation = {
+              lat: position.coords.latitude,
+              lng: position.coords.longitude
+            };
+            var circle = new google.maps.Circle({
+              center: geolocation,
+              radius: position.coords.accuracy
+            });
+            autocomplete.setBounds(circle.getBounds());
+          });
+        }
+      }
+    </script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDTUHYBAToNXJuCXOarUxhSFn7nv0HqpHk&libraries=places&callback=initAutocomplete"
+        async defer></script>
+
+
+
+</body>
+</html>
