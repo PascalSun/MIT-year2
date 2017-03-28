@@ -1,0 +1,15 @@
+{ "hosts-file"                   : "test1.hosts",
+  "locations-file"               : "test1.locations",
+  "duration"                     : 100,
+  "vector-diffusion-probability" : 0.1,
+  "biting-rate"                  : 1.0,
+  "vector-infection-probability" : 0.1,
+  "host-infection-probability"   : 0.9,
+  "vector-e-to-i-rate"           : 0.5,
+  "host-e-to-i-rate"             : 0.5,
+  "host-i-to-r-rate"             : 0.1,
+  "vector-birth-rate"            : 0.5,
+  "vector-maturation-rate"       : 0.1,
+  "vector-death-rate"            : 0.1
+  }
+
