@@ -12,3 +12,10 @@
 - Intergration management
 
 ## Recommendation of execution
+
+---
+### Problems
+- The ground is too wet, reasearch problem, need excavator
+- Underwater breach, how solved very good, only 4 weeks later
+- Concrete Pour
+- Adding Capacity
