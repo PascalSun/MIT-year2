@@ -27,3 +27,10 @@
 - Simplfy the internel design
 - Plan, design with innovative ideas, fast track project
 - It was decided that an escort tug was not necessary despite the length of tow and the proximity of the route to the coast. For risk management and cost management then lead to time management
+
+---
+
+## Section B
+### Execution
+
+#### Scope Management
