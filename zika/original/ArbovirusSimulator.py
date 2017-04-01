@@ -34,8 +34,11 @@ def main():
     cid            = int(cids)
     c              = locData[cids]
     c['cid']       = cid
+
+    # build in function, a set of params
     c['hosts']     = set()
     locations[cid] = c
+
 
   with open(params['hosts-file'],'r') as f:
     hostData = json.load(f)
