@@ -49,6 +49,9 @@ def main():
     hosts[iid] = h
     locations[h['location']]['hosts'].add(iid)
 
+  ## add this to locations where the hosts is, iid means the id of the host
+
+
   #################
   # Simulation Loop
 
@@ -83,8 +86,10 @@ def main():
 def regularHumanMovement(cycle,params,hosts,locations):
   if isDaytime(cycle):
     for iid in hosts:
+      # print iid
       h = hosts[iid]
       hub = h['hub']
+      # If they have the hub
       if hub >= 0:
         moveHost(locations,h,hub)
   else:
@@ -118,6 +123,7 @@ def vectorMovement(cycle,params,locations):
     # choose numbers of outgoing and subtract
 
     movers = vectorMovementFrom(c,diffP)
+
     vSub(locations[cid]['v-state'],movers)
 
     # choose destinations for movers and accumulate
@@ -140,12 +146,18 @@ S = 0
 E = 1
 I = 2
 R = 3
-
+# Different stage of the viruse
+# S Suptiitle 
+# E exposed
+# I infectious
+# R recovery
 def vectorMovementFrom(c,diffP):
   vs = c['v-state']
   return map(lambda n : binSamp(n,diffP),vs)
 
 def distributeVectors(c,movers):
+  # print movers
+  # print c
   nbs = c['neighbours']
   nnbs = len(nbs)
   dMovers = {}
@@ -155,6 +167,9 @@ def distributeVectors(c,movers):
     for n in range(0,movers[vs]):
       nbt = np.random.randint(0,nnbs)
       dMovers[nbs[nbt]][vs] += 1
+
+
+
   return dMovers
     
 #######################################
@@ -211,7 +226,7 @@ def infectionEvent(cycle,h,c):
 
 ############################################
 # Process : infection progression in vectors
-
+# Exposed to Infectious for verctor
 def infectionInVectors(cycle,params,locations):
 
   eToIRate = params['vector-e-to-i-rate'] # see [1]
@@ -220,6 +235,7 @@ def infectionInVectors(cycle,params,locations):
   for cid in locations:
     c = locations[cid]
     ne = c['v-state'][E]
+
     if ne == 0: continue
     nTrans = binSamp(ne,pTrans)
     c['v-state'][E] -= nTrans

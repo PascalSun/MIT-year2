@@ -1,6 +1,6 @@
 { "hosts-file"                   : "test1.hosts",
   "locations-file"               : "test1.locations",
-  "duration"                     : 100,
+  "duration"                     : 2,
   "vector-diffusion-probability" : 0.1,
   "biting-rate"                  : 1.0,
   "vector-infection-probability" : 0.1,
