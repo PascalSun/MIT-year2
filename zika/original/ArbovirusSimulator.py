@@ -167,9 +167,6 @@ def distributeVectors(c,movers):
     for n in range(0,movers[vs]):
       nbt = np.random.randint(0,nnbs)
       dMovers[nbs[nbt]][vs] += 1
-
-
-
   return dMovers
     
 #######################################
@@ -184,6 +181,7 @@ def vectorInfection(cycle,params,hosts,locations):
     if ns == 0: continue
     npop = 0
     ipop = 0
+    # print c['hosts']
     for iid in c['hosts']:
       npop += 1
       if hosts[iid]['i-state'] == 'I': ipop += 1
@@ -211,6 +209,7 @@ def hostInfection(cycle,params,hosts,locations):
       hpop += 1
     if hs == 0: continue
     nv = sum(c['v-state'])
+    # what's this for?
     beta = br*pbip*float(nvi) / float(hpop)
     p    = 1.0 - math.exp(-beta)
     for iid in c['hosts']:
