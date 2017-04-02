@@ -1,7 +1,8 @@
-#Note
+# Note
 
 ## Note about cmake
 
+### CMakeLists.txt
 ```
 PROJECT (HELLO)
 
@@ -14,3 +15,7 @@ MESSAGE(STATUS "This is SOURCE dir "${HELLO_SOURCE_DIR})
 ADD_EXECUTABLE(hello ${SRC_LIST})
 
 ```
+### To use with xcode
+
+`cmake -G Xcode`
+`open xxx`
