@@ -16,30 +16,34 @@
 
 ### Content
 1. Introduction about HPC
-	a.  We are trying to solve larger and larger problems, at the same time, the processors are more and more poewerful
-	b. However, the processors nearly meet its limit
-	c. So we are thinking use some less powerful processors and combine them together
-	d. Then do the computing on the different cores and distributed memory
-	e. How to make the most use of it, it is about high performance computing
+
+	-  We are trying to solve larger and larger problems, at the same time, the processors are more and more poewerful
+	-  However, the processors nearly meet its limit
+	-  So we are thinking use some less powerful processors and combine them together
+	-  Then do the computing on the different cores and distributed memory
+	-  How to make the most use of it, it is about high performance computing
 2. About multiple threads
-	a. Process & Threads
-	b. A process creates multiple threads and these threads share memory
-	c. built-in thread interface is not very good. 
-	d. OpenMP are designed to make the most use of the different cores.
+	-  Process & Threads
+	-  A process creates multiple threads and these threads share memory
+	-  built-in thread interface is not very good. 
+	-  OpenMP are designed to make the most use of the different cores.
 3. About openMP:
-	a. compiler directives
-	b. with c, c++ and fortan
-	c. easy to use
-	b. take advantages of mulit-core
+
+	-  compiler directives
+	-  with c, c++ and fortan
+	-  easy to use
+	-  take advantages of mulit-core
 4. Model of openMP: Fork and Join
+
 	If want to use openMP, first need to identity the master thread and where can be done by parallism
 	Then write the parallism code
 5. openMP core syntax
-	a. include
-	b. #pagama
-	c. gcc -fopenmp file.c
-	d. in fact, if we do not gcc with the paramater -fopenmp, it will be compiled as normal program. Run on platform without openMP
-	e. data structure:
+
+	-  include
+	-  #pagama
+	-  gcc -fopenmp file.c
+	-  in fact, if we do not gcc with the paramater -fopenmp, it will be compiled as normal program. Run on platform without openMP
+	-  data structure:
 		- shared
 		- privated: firstprivate lastprivate
 		- none
@@ -68,4 +72,16 @@
 	a. init/finalize
 	b. rank and size: how big our family are and who I am, so we can communicate effiectively
 	c. send/rev: send and recieve message
-	d. 
+	d. send: start: address of the data to start; count: number of data; type of data: MPI_long, MPI_double; dest: target process, rank of the process, who i want to send;tag:set with tag, so receiving can identity the message, messages can be screened at the receiving end by specifying a specific tag; Comm means communicator, normally is MPI_COMM_WORLD.
+	e: recv: start: where to receive, the start address; number of block; datatype; source means where from, we can use MPI_ANY_SOURCE to represent message from all the nodes;Tag can be speficifed which message to be received;COM is the same: MPI_COMM_WORLD;status is a data structure include the information : status.MPI_TAG; status.MPI_SOURCE;  
+	f: processes can be collected into groups, and together we can form the groups as communicator; default communicator is MPI_COMM_WORLD
+	g: the return of the functions can be mpi_success or error code
+	h: block function like MPI_SEND() and MPI_RECV() won't return until the communication is finished
+	i: funciton like MPI_ISend() will get return immediately.
+9. Code to run: 
+	a. gcc -fopenmp hello1.c  ./a.out
+	b. gcc -fopenmp hello2.c -o hello ./hello
+	c. gcc -fopenmp hello3.c -o hello ./hello
+	d. mpicc mpihello1.c mpiexec \-n 4 a.out
+	e. mpicc mpihello2.c mpiexec \-n 4 a.out
+	f. mpicc -fopenmp openmpmpi.c -o openmpmpi mpiexec \-n 8 openmpmpi
