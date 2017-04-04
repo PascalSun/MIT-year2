@@ -77,8 +77,21 @@
 	-  init/finalize
 	-  rank and size: how big our family are and who I am, so we can communicate effiectively
 	-  send/rev: send and recieve message
-	-  send: start: address of the data to start; count: number of data; type of data: MPI_long, MPI_double; dest: target process, rank of the process, who i want to send;tag:set with tag, so receiving can identity the message, messages can be screened at the receiving end by specifying a specific tag; Comm means communicator, normally is MPI_COMM_WORLD.
-	-  recv: start: where to receive, the start address; number of block; datatype; source means where from, we can use MPI_ANY_SOURCE to represent message from all the nodes;Tag can be speficifed which message to be received;COM is the same: MPI_COMM_WORLD;status is a data structure include the information : status.MPI_TAG; status.MPI_SOURCE;  
+	-  send: 
+		- start: address of the data to start;
+		- count: number of data; 
+		- type of data: MPI_long, MPI_double; 
+		- dest: target process, rank of the process,who i want to send;
+		- tag:set with tag, so receiving can identity the message, messages can be screened at the receiving end by specifying a specific tag; 
+		- Comm means communicator, normally is MPI_COMM_WORLD.
+	-  recv: 
+		- start: where to receive, the start address; 
+		- number of block; 
+		- datatype; 
+		- source means where from, we can use MPI_ANY_SOURCE to represent message from all the nodes;
+		- Tag can be speficifed which message to be received;
+		- COM is the same: MPI_COMM_WORLD;
+		- status is a data structure include the information : status.MPI_TAG; status.MPI_SOURCE;  
 	-  processes can be collected into groups, and together we can form the groups as communicator; default communicator is MPI_COMM_WORLD
 	-  the return of the functions can be mpi_success or error code
 	-  block function like MPI_SEND() and MPI_RECV() won't return until the communication is finished
