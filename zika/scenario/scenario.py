@@ -17,7 +17,7 @@ def generate(hosts):
 	t.close()
 
 def generatehosts(num,hubnum,rate,hubhome):
-	# Generate the hosts [] 
+	# Generate the hosts []
 
 	# Choose the initation state of the infectious situation with different rate
 	hosts = []
@@ -58,7 +58,7 @@ def generatelocations(line,cap,immature,state):
 		for j in range(line):
 			location=[]
 			location.append(k*line+j)
-			location.append([100*(j+1),100*(k+1)])
+			location.append([float(100*(j+1)),float(100*(k+1))])
 			location.append(generateneighbour(k*line+j,line))
 			location.append([])
 			location.append(cap)
@@ -78,20 +78,20 @@ def generateneighbour(x,line):
 	if x + line < line*line:
 		neighbours.append(x+line)
 	if x-line > -1:
-		neighbours.append(x-line) 
+		neighbours.append(x-line)
 	return neighbours
 
 
 def main():
-	# par = [num of hosts, num of hubs, rate of different situation at initation stage, rate of people stay home with no hub] 
-	par =[100,10,[0.1,0.3,0.5,0.1],0.2]
+	# par = [num of hosts, num of hubs, rate of different situation at initation stage, rate of people stay home with no hub]
+	par =[10000,10,[0.1,0.3,0.5,0.1],0.2]
 
 	hosts = generatehosts(par[0],par[1],par[2],par[3])
 	generate(hosts)
 
 
 	# par = [line of the area, capabilty, immature, v-state]
-	parlocation = [5,20,0,[20,0,0,0]]
+	parlocation = [100,20,0,[20,0,0,0]]
 	locations = generatelocations(parlocation[0],parlocation[1],parlocation[2],parlocation[3])
 	generatelocation(locations)
 
