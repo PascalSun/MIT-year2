@@ -10,9 +10,23 @@ def generate(hosts):
 	\n    "home" : {},\
 	\n    "hub" : {} \n }},\n'
 	t.write("{ \n")
+	lens = len(hosts)
+	count = 0
 	for k in hosts:
+		if count > lens - 2:
+			break
+		else:
+			count = count+1
 		contentr = content.format(k[0],k[1],k[2],k[3],k[4])
 		t.write(contentr)
+	content ='  "{}" : {{\
+	\n    "location" : {},\
+	\n    "i-state" : "{}",\
+	\n    "home" : {},\
+	\n    "hub" : {} \n }}\n'
+	k = hosts[lens-1]
+	contentr = content.format(k[0],k[1],k[2],k[3],k[4])
+	t.write(contentr)
 	t.write("} ")
 	t.close()
 
@@ -44,10 +58,27 @@ def generatelocation(locations):
 	\n   "v-immature":{},\
 	\n   "v-state":{} \n }},\n'
 	t.write("{ \n")
-	for k in locations:
 
+	lens = len(locations)
+	count = 0
+	for k in locations:
+		if count > lens - 2:
+			break
+		else:
+			count = count+1
 		contentr = content.format(k[0],k[1],k[2],k[3],k[4],k[5],k[6])
 		t.write(contentr)
+	content = ' "{}" :{{\
+	\n   "coordinates": {},\
+	\n   "neighbours": {},\
+	\n   "hosts":{},\
+	\n   "v-capacity":{},\
+	\n   "v-immature":{},\
+	\n   "v-state":{} \n }}\n'
+	k = locations[lens-1]
+	contentr = content.format(k[0],k[1],k[2],k[3],k[4],k[5],k[6])
+	t.write(contentr)
+
 	t.write("}")
 	t.close()
 
@@ -84,6 +115,7 @@ def generateneighbour(x,line):
 
 def main():
 	# par = [num of hosts, num of hubs, rate of different situation at initation stage, rate of people stay home with no hub]
+	# num of hosts should be line of area * line of area
 	par =[10000,10,[0.1,0.3,0.5,0.1],0.2]
 
 	hosts = generatehosts(par[0],par[1],par[2],par[3])
