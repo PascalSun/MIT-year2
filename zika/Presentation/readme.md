@@ -25,7 +25,7 @@
 2. About multiple threads
 	-  Process & Threads
 	-  A process creates multiple threads and these threads share memory
-	-  built-in thread interface is not very good. 
+	-  built-in thread interface is not very good.
 	-  OpenMP are designed to make the most use of the different cores.
 3. About openMP:
 
@@ -36,7 +36,7 @@
 4. Model of openMP: Fork and Join
 
 	If want to use openMP, first need to identity the master thread and where can be done by parallism
-	
+
 	Then write the parallism code
 
 5. openMP core syntax
@@ -77,17 +77,17 @@
 	-  init/finalize
 	-  rank and size: how big our family are and who I am, so we can communicate effiectively
 	-  send/rev: send and recieve message
-	-  send: 
+	-  send:
 		- start: address of the data to start;
-		- count: number of data; 
-		- type of data: MPI_long, MPI_double; 
+		- count: number of data;
+		- type of data: MPI_long, MPI_double;
 		- dest: target process, rank of the process,who i want to send;
-		- tag:set with tag, so receiving can identity the message, messages can be screened at the receiving end by specifying a specific tag; 
+		- tag:set with tag, so receiving can identity the message, messages can be screened at the receiving end by specifying a specific tag;
 		- Comm means communicator, normally is MPI_COMM_WORLD.
-	-  recv: 
-		- start: where to receive, the start address; 
-		- number of block; 
-		- datatype; 
+	-  recv:
+		- start: where to receive, the start address;
+		- number of block;
+		- datatype;
 		- source means where from, we can use MPI_ANY_SOURCE to represent message from all the nodes;
 		- Tag can be speficifed which message to be received;
 		- COM is the same: MPI_COMM_WORLD;
@@ -97,10 +97,11 @@
 	-  block function like MPI_SEND() and MPI_RECV() won't return until the communication is finished
 	-  funciton like MPI_ISend() will get return immediately.
 9. Code to run:
- 
-	-  gcc -fopenmp hello1.c  ./a.out
-	-  gcc -fopenmp hello2.c -o hello ./hello
-	-  gcc -fopenmp hello3.c -o hello ./hello
-	-  mpicc mpihello1.c mpiexec \-n 4 a.out
-	-  mpicc mpihello2.c mpiexec \-n 4 a.out
-	-  mpicc -fopenmp openmpmpi.c -o openmpmpi mpiexec \-n 8 openmpmpi
+	export OMPI_CC=gcc-6
+	export OMPI_CXX=g++-6
+	gcc-6 -fopenmp hello1.c  ./a.out
+	gcc-6 -fopenmp hello2.c -o hello ./hello
+	gcc-6 -fopenmp hello3.c -o hello ./hello
+	mpicc mpihello1.c mpiexec \-n 4 a.out
+	mpicc mpihello2.c mpiexec \-n 4 a.out
+	mpicc -fopenmp openmpmpi.c -o openmpmpi mpiexec \-n 8 openmpmpi
