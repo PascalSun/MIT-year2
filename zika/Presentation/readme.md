@@ -97,6 +97,7 @@
 	-  block function like MPI_SEND() and MPI_RECV() won't return until the communication is finished
 	-  funciton like MPI_ISend() will get return immediately.
 9. Code to run:
+
 	export OMPI_CC=gcc-6
 	export OMPI_CXX=g++-6
 	gcc-6 -fopenmp hello1.c  ./a.out
