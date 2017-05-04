@@ -99,24 +99,24 @@
 9. Code to run:
 
 ```
-		export OMPI_CC=gcc-6
-	  export OMPI_CXX=g++-6
+export OMPI_CC=gcc-6
+export OMPI_CXX=g++-6
 
-		gcc-6 -fopenmp hello1.c  
-		./a.out
+gcc-6 -fopenmp hello1.c  
+./a.out
 
-		gcc-6 -fopenmp hello2.c -o hello
-		./hello
+gcc-6 -fopenmp hello2.c -o hello
+./hello
 
-		gcc-6 -fopenmp hello3.c -o hello
-		./hello
+gcc-6 -fopenmp hello3.c -o hello
+./hello
 
-		mpicc mpihello1.c
-		mpiexec \-n 4 a.out
+mpicc mpihello1.c
+mpiexec \-n 4 a.out
 
-		mpicc mpihello2.c
-		mpiexec \-n 4 a.out
-		
-		mpicc -fopenmp openmpmpi.c -o openmpmpi
-		mpiexec \-n 8 openmpmpi
+mpicc mpihello2.c
+mpiexec \-n 4 a.out
+
+mpicc -fopenmp openmpmpi.c -o openmpmpi
+mpiexec \-n 8 openmpmpi
 ```
