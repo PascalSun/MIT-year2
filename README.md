@@ -32,3 +32,13 @@
 - Aim: Need to develop a website with match functions using mean stack
 - Due Date: 2017.5.26
 ### About my project
+
+Use MEAN to setup a website have the functions below:
+1. A user account and login feature.
+2. The ability to edit personal details and preferences.
+3. A method to browse potential matches, and initiate some form of contact or communication.
+
+4. Reacting to other users events (a new match has logged on, or some is viewing your profile...).
+5. Realtime chat between logged in users.
+6. Graphical representations of match quality.
+7. Location based matching.
