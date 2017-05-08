@@ -15,6 +15,7 @@
   - Learning: some learning examples
   - Project1: first part of the project
   - Project2: second part of the project and mainly part. Developed by MEAN Stack
+
 - Zika: Simulate the zika virus infectious process
   - Geogre: Developed by Geogre
   - Original: Original Code from client
@@ -22,11 +23,12 @@
   - Presentation: Tech Seminar Presentation
   - Scenario: Generate the data to test
   - Note: Some notes about it
+
 - GENG5505: Project management
 
 ----
 
 ## Introduction about Agile Web Development
-- Aim: Need to develop a website with match functions
+- Aim: Need to develop a website with match functions using mean stack
 - Due Date: 2017.5.26
 ### About my project

@@ -1,16 +1,16 @@
 # Data
-## Project trial is 2 cores for 3 months
-## 16 cores and 64GB
+- Project trial is 2 cores for 3 months
+- 16 cores and 64GB
 
 
 # Storage
-## LiveARC provide access to Pawsey data stores
-## https://data.pawsey.org.au
-## Finable/Accessible/Interoperable/Reusable
+1. LiveARC provide access to Pawsey data stores
+2. https://data.pawsey.org.au
+3. Finable/Accessible/Interoperable/Reusable
 
 # Visualisation
 
-## Sever software - Client see
+1. Sever software - Client see
 
 ---
 ## 201.5.8
@@ -21,4 +21,4 @@
 ### Useful command for pawsey
 1. sbatch jobscriptfilename
 2. squenue
-3. 
+3.
