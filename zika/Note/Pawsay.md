@@ -19,6 +19,7 @@
 - git link: https://github.com/PawseySupercomputing
 
 ### Useful command for pawsey
+Documents: https://support.pawsey.org.au/documentation/display/US/User+Support+Documentation
 1. sbatch jobscriptfilename
 2. squenue
-3.
+3. module load/unload list 
