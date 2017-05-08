@@ -11,12 +11,12 @@
 - Project Management
 
 ## File Tree
-- Agile Web Development
+- Agile Web
   - Learning: some learning examples
   - Project1: first part of the project
   - Project2: second part of the project and mainly part. Developed by MEAN Stack
 
-- Zika: Simulate the zika virus infectious process
+- Design: Simulate the zika virus infectious process
   - Geogre: Developed by Geogre
   - Original: Original Code from client
   - DevEnviroment: Setup the development environment
@@ -24,7 +24,7 @@
   - Scenario: Generate the data to test
   - Note: Some notes about it
 
-- GENG5505: Project management
+- Management: Project management
 
 ----
 
