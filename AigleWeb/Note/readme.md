@@ -18,3 +18,8 @@ NOSQL，json格式的数据库
 - document
 - field->colnum
 - index
+- 有时候出现 shutting down code 100:
+  ```
+  sudo chown -R $USER /data/db
+  ```
+- to connect to mLab, you need to add user and then use the password
