@@ -1,4 +1,7 @@
 import csv
+
+# generatelocation(locations): use the clean data to generate the json file
+
 def generatelocation(locations):
 	t = open('test1.locations','w')
 	content = ' "{}" :{{\
@@ -33,6 +36,7 @@ def generatelocation(locations):
 	t.write("}")
 	t.close()
 
+# Find the Von Neumann neighbourhood for each cell
 def generateneighbour(row,col):
 	neighbours = []
 	if row > 1 and row < 310:
@@ -46,19 +50,49 @@ def generateneighbour(row,col):
 		neighbours.append((row+1)*226+col+1)
 	return neighbours
 
+# Get cell info from LocationCellInfo.csv
 def getfromcsv():
     locations = []
     with open('LocationCellInfo.csv') as csvfile:
         reader = csv.DictReader(csvfile)
         for row in reader:
-            par = [row['Cell ID'],row['Long'],row['Lat'],row['Column'],row['Row']]
-            locations.append(par)
-    return locations
+            locations.append([row['Cell ID'],row['Long'],row['Lat'],row['Column'],row['Row']])
+
+	return locations
+
+# Get capability info from mosBreeding...csv
+def getcap():
+	ids  = []
+	mos = []
+	with open('mosBreedingSiteClassification.csv') as csvfile:
+		reader = csv.DictReader(csvfile)
+		for row in reader:
+			ids.append(row['cellID'])
+			mos.append(row['mos'])
+
+	return ids,mos
 
 def main():
-    locations = getfromcsv()
-    location = []
-    for k in locations:
-        location.append([k[0],[k[1],k[2]],generateneighbour(int(k[4]),int(k[3])),[],20,0,[20,0,0,0]])
-    generatelocation(location)
-main()
+
+ 	ids,mos = getcap()
+	locations = getfromcsv()
+
+	loca = []
+	i = 0
+	for k in locations:
+		indexs = ids.index(k[0])
+		caps = mos[indexs]
+		# if caps  = 1 -> capbility = 20, this can be adjusted
+		if caps == '1':
+			capss = 20
+		else:
+			capss = 40
+		# id, [lat,long],neighbour,
+		par = [k[0],[k[1],k[2]],generateneighbour(int(k[4]),int(k[3])),[],capss,0,[20,0,0,0]]
+		loca.append(par)
+	generatelocation(loca)
+	print('locations done')
+
+
+if __name__ == "__main__":
+	main()
