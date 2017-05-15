@@ -1,5 +1,5 @@
 import csv
-
+# to use, we need to add  index,cellID,mos,col,row on the first row of the mosBreedingSiteClassification.csv
 # generatelocation(locations): use the clean data to generate the json file
 
 def generatelocation(locations):
