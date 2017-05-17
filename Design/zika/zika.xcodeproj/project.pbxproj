@@ -6,10 +6,17 @@
 	objectVersion = 46;
 	objects = {
 
+/* Begin PBXFileReference section */
+		B2E07E9D1ECC70A000FCDFF8 /* ArbovirusSimulator.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = ArbovirusSimulator.cpp; sourceTree = "<group>"; };
+		B2E07E9E1ECC70A000FCDFF8 /* ArbovirusSimulator.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = ArbovirusSimulator.hpp; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
 /* Begin PBXGroup section */
 		B2E07E961ECC6FE700FCDFF8 = {
 			isa = PBXGroup;
 			children = (
+				B2E07E9D1ECC70A000FCDFF8 /* ArbovirusSimulator.cpp */,
+				B2E07E9E1ECC70A000FCDFF8 /* ArbovirusSimulator.hpp */,
 			);
 			sourceTree = "<group>";
 		};
