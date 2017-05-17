@@ -1,6 +1,6 @@
 #
 # Simple prototype agent based arbovirus spread simulator.
-# 
+#
 
 import math
 import sys
@@ -130,7 +130,7 @@ def vectorMovement(cycle,params,locations):
 
     dMovers = distributeVectors(c,movers)
     for nb in dMovers:
-      if not incoming.has_key(nb): 
+      if not incoming.has_key(nb):
         incoming[nb] = emptyVState()
       vAdd(incoming[nb],dMovers[nb])
 
@@ -138,6 +138,7 @@ def vectorMovement(cycle,params,locations):
   # by moving in all incoming vectors
 
   for cid in incoming:
+
     vAdd(locations[cid]['v-state'],incoming[cid])
 
 def emptyVState(): return [0,0,0,0]
@@ -147,7 +148,7 @@ E = 1
 I = 2
 R = 3
 # Different stage of the viruse
-# S Suptiitle 
+# S Suptiitle
 # E exposed
 # I infectious
 # R recovery
@@ -168,7 +169,7 @@ def distributeVectors(c,movers):
       nbt = np.random.randint(0,nnbs)
       dMovers[nbs[nbt]][vs] += 1
   return dMovers
-    
+
 #######################################
 # Process : host to vector transmission
 
@@ -274,14 +275,14 @@ def vectorPopulation(cycle,params,locations):
     vs = c['v-state']
     cc = c['v-capacity']
     nDeaths = map(lambda n : binSamp(n,pDeath),vs)
-    
+
     vPop    = sum(vs)
     br      = float(vPop) * br0 * max(0.0,1.0 - vPop/cc)
     nBirths = 0
     if br >= 0.0: nBirths = np.random.poisson(br)
 
     nMats   = binSamp(c['v-immature'],pMat)
-    
+
     vSub(vs,nDeaths)
     c['v-immature'] += nBirths
     c['v-immature'] -= nMats
@@ -290,7 +291,7 @@ def vectorPopulation(cycle,params,locations):
 #######
 # Tools
 
-def isDaytime(cycle): 
+def isDaytime(cycle):
   return (cycle % 2) == 0 # even cycles are day
 
 ######
@@ -332,7 +333,7 @@ main()
   'locations-file' :
   'duration'       : number of cycles to run simulation
   'vector-diffusion-probability' :
-    per (active) cycle probability of a vector moving to an 
+    per (active) cycle probability of a vector moving to an
     adjacent cell; this would be calculated from eg a diffusion
     coefficient and cell geometry
   'biting-rate'    : mean number of bites per cycle for each
@@ -377,7 +378,7 @@ main()
   'v-immature'  : number of immature (egg, larvae, pupae) in cell
   'v-state'     : stored as a 4-vector or numbers in states
                   SEIR. A bit brittle if number of states changes
-                  eg locations[27]['v-state'][I] is the number 
+                  eg locations[27]['v-state'][I] is the number
                   of vectors currently in I state in cell 27.
                   R is not actually used for vectors.
 
@@ -398,11 +399,11 @@ main()
   We want to calculate the expected number of infectious
   bites for each vector.
 
-  br : 
+  br :
     number of bites by vector
-  br * (ih/nh) : 
+  br * (ih/nh) :
     only (ih/nh) of bites will be on infectious hosts
-  br * (ih/in) * pbip : 
+  br * (ih/in) * pbip :
     only some of those bites will transmit
 
   beta = (float(ipop) / float(npop)) * br * pbip
@@ -411,13 +412,13 @@ main()
 
   We want the expected number of infectious bites on each host.
 
-  br : 
+  br :
     number of bites per vector
-  br * iv : 
+  br * iv :
     total number of bites by infectious vectors
-  br * iv * (1/nh) : 
+  br * iv * (1/nh) :
     number of those bites on each human
-  br * iv * (1/nh) * pbip : 
+  br * iv * (1/nh) * pbip :
     only some of those bites will transmit
 
     beta = br*pbip*float(nvi) / float(hpop)

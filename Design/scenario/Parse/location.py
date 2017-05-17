@@ -52,13 +52,21 @@ def generateneighbour(row,col):
 
 # Get cell info from LocationCellInfo.csv
 def getfromcsv():
-    locations = []
-    with open('LocationCellInfo.csv') as csvfile:
-        reader = csv.DictReader(csvfile)
-        for row in reader:
-            locations.append([row['Cell ID'],row['Long'],row['Lat'],row['Column'],row['Row']])
+	locations = []
+	rows = []
+	lat = [] 
+	col = []
+	long = []
+	with open('LocationCellInfo.csv') as csvfile:
+		reader = csv.DictReader(csvfile)
+		for row in reader:
+			locations.append([row['Cell ID'],row['Long'],row['Lat'],row['Column'],row['Row']])
+			rows.append(row['Row'])
+			lat.append(row['Lat'])
+			col.append(row['Column'])
+			long.append(row['Long'])
 
-	return locations
+	return locations,rows,lat,col,long
 
 # Get capability info from mosBreeding...csv
 def getcap():
@@ -75,23 +83,52 @@ def getcap():
 def main():
 
  	ids,mos = getcap()
-	locations = getfromcsv()
+	locations,rows,lat,col,long = getfromcsv()
+	
+	lats = []
+	longs = []
+
+	for k in range(1,310):
+		try: 
+			rowindex = rows.index(str(k))
+			lats.append(lat[rowindex])
+		except:
+			print(k)
+
+
+	for k in range(1,227):
+		try: 
+			colindex = col.index(str(k))
+			longs.append(long[colindex])
+		except:
+			print(k)
+		
 
 	loca = []
-	i = 0
-	for k in locations:
-		indexs = ids.index(k[0])
-		caps = mos[indexs]
+	for rowno in range(1,310):
+		for colno in range(1,227):
+			cellID = (1+rowno)*226+colno
+			try:
+				idindex = ids.index(cellID)
+				caps = mos[idindex]
+			except:
+				caps = '3'
 		# if caps  = 1 -> capbility = 20, this can be adjusted
-		if caps == '1':
-			capss = 20
-		else:
-			capss = 40
-		# id, [lat,long],neighbour,
-		par = [k[0],[k[1],k[2]],generateneighbour(int(k[4]),int(k[3])),[],capss,0,[20,0,0,0]]
-		loca.append(par)
+			if caps == '1':
+				capss = 20
+			elif caps == '2':
+				capss = 40	
+			else:
+				capss = 10 # to adjust
+			# print([float(longs[colno]),float(lats[rowno])])
+			# print(colno,rowno)
+			par = [cellID,[float(longs[colno-1]),float(lats[rowno-1])],generateneighbour(rowno,colno),[],capss,0,[capss,0,0,0]]		
+			loca.append(par)
+			print(rowno,colno)
 	generatelocation(loca)
 	print('locations done')
+
+
 
 
 if __name__ == "__main__":

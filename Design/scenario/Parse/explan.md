@@ -17,9 +17,9 @@ where X in {fhg,hg,sg,wg}
 
 Columns (no header row):
 
-0 individual ID
+0 individual ID --> id for hosts
 1 group ID (household, school or work group ID)
-2 grid ID
+2 grid ID --> used for location and home
 3 grid index ID (?)
 4 logitude
 5 latitude
