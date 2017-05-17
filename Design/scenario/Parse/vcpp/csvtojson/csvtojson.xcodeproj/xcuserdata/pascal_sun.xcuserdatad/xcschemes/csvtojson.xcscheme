@@ -14,10 +14,10 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "B2E07EA71ECC71A600FCDFF8"
-               BuildableName = "prase"
-               BlueprintName = "prase"
-               ReferencedContainer = "container:prase.xcodeproj">
+               BlueprintIdentifier = "B2AF48A21ECC72CE0045E195"
+               BuildableName = "csvtojson"
+               BlueprintName = "csvtojson"
+               ReferencedContainer = "container:csvtojson.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -32,10 +32,10 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "B2E07EA71ECC71A600FCDFF8"
-            BuildableName = "prase"
-            BlueprintName = "prase"
-            ReferencedContainer = "container:prase.xcodeproj">
+            BlueprintIdentifier = "B2AF48A21ECC72CE0045E195"
+            BuildableName = "csvtojson"
+            BlueprintName = "csvtojson"
+            ReferencedContainer = "container:csvtojson.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -45,7 +45,7 @@
       buildConfiguration = "Debug"
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
-      launchStyle = "0"
+      launchStyle = "1"
       useCustomWorkingDirectory = "NO"
       ignoresPersistentStateOnLaunch = "NO"
       debugDocumentVersioning = "YES"
@@ -55,10 +55,10 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "B2E07EA71ECC71A600FCDFF8"
-            BuildableName = "prase"
-            BlueprintName = "prase"
-            ReferencedContainer = "container:prase.xcodeproj">
+            BlueprintIdentifier = "B2AF48A21ECC72CE0045E195"
+            BuildableName = "csvtojson"
+            BlueprintName = "csvtojson"
+            ReferencedContainer = "container:csvtojson.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -74,10 +74,10 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "B2E07EA71ECC71A600FCDFF8"
-            BuildableName = "prase"
-            BlueprintName = "prase"
-            ReferencedContainer = "container:prase.xcodeproj">
+            BlueprintIdentifier = "B2AF48A21ECC72CE0045E195"
+            BuildableName = "csvtojson"
+            BlueprintName = "csvtojson"
+            ReferencedContainer = "container:csvtojson.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

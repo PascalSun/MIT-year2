@@ -4,7 +4,7 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
-		<key>prase.xcscheme</key>
+		<key>csvtojson.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
 			<integer>0</integer>
@@ -12,7 +12,7 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>B2E07EA71ECC71A600FCDFF8</key>
+		<key>B2AF48A21ECC72CE0045E195</key>
 		<dict>
 			<key>primary</key>
 			<true/>
