@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "EB5E36355CDEF94402F84A358A145FC10EFC8A35",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "EB5E36355CDEF94402F84A358A145FC10EFC8A35" : 9223372036854775807,
+    "889E6F40363BE10D7D8DBFF8366D8109512B975B" : 9223372036854775807
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "296BAA4D-E9B5-43E3-B521-18DC82E6F41A",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "EB5E36355CDEF94402F84A358A145FC10EFC8A35" : "MIT-year2\/",
+    "889E6F40363BE10D7D8DBFF8366D8109512B975B" : ""
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "zika",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "Design\/zika\/zika.xcodeproj",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "github.com:PascalSun\/Pascal.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "889E6F40363BE10D7D8DBFF8366D8109512B975B"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "github.com:PascalSun\/MIT-year2.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "EB5E36355CDEF94402F84A358A145FC10EFC8A35"
+    }
+  ]
+}
