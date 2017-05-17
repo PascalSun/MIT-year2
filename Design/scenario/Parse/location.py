@@ -120,8 +120,7 @@ def main():
 				capss = 40	
 			else:
 				capss = 10 # to adjust
-			# print([float(longs[colno]),float(lats[rowno])])
-			# print(colno,rowno)
+
 			par = [cellID,[float(longs[colno-1]),float(lats[rowno-1])],generateneighbour(rowno,colno),[],capss,0,[capss,0,0,0]]		
 			loca.append(par)
 			print(rowno,colno)

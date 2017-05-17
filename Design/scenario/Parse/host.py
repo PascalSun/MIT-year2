@@ -35,23 +35,6 @@ def generate(hosts):
 	t.write("} ")
 	t.close()
 
-def generatehosts(num,hubnum,rate,hubhome):
-	# Generate the hosts []
-
-	# Choose the initation state of the infectious situation with different rate
-	hosts = []
-	elems = ['S','E','I','R']
-
-	# A list of hub with different rates
-	hubs = [-1]
-	hubsrate = [hubhome]
-	for k in range(hubnum):
-		hubs.append(random.randint(0,num))
-		hubsrate.append((1-hubhome)/hubnum)
-
-	for i in range(num):
-		hosts.append([i,i,np.random.choice(elems, p=rate),i,np.random.choice(hubs,p=hubsrate)])
-	return hosts
 
 def getcsv(par):
 	home = []
@@ -73,7 +56,10 @@ def getfromcsv():
 	return locations
 
 def main():
+	# total number of individuals
 	all = 56898
+
+	# rate for different states
 	rate = [0.1,0.3,0.5,0.1]
 	elems = ['S','E','I','R']
 
@@ -102,6 +88,7 @@ def main():
 		except:
 			hlocation = random.choice(location)
 		
+		# Find hub
 		try:
 			ischool = school.index(str(i))
 			hub = schoollocation[ischool]
@@ -116,7 +103,10 @@ def main():
 	generate(hosts)	
 
 
-	
+
+
+#-----
+	# something to test use
 	# for k in worklocation:
 	# 	try:
 	# 		ilocation = location.index(k)
