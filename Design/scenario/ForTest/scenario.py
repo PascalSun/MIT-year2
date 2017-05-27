@@ -116,14 +116,22 @@ def generateneighbour(x,line):
 def main():
 	# par = [num of hosts, num of hubs, rate of different situation at initation stage, rate of people stay home with no hub]
 	# num of hosts should be line of area * line of area
+<<<<<<< HEAD
 	par =[90000,10,[0.1,0.3,0.5,0.1],0.2]
+=======
+	par =[10000,10,[0.1,0.3,0.5,0.1],0.2]
+>>>>>>> 026f32f61d6b1849f8b74014e2b1dc2503de76e5
 
 	hosts = generatehosts(par[0],par[1],par[2],par[3])
 	generate(hosts)
 
 
 	# par = [line of the area, capabilty, immature, v-state]
+<<<<<<< HEAD
 	parlocation = [300,20,0,[20,0,0,0]]
+=======
+	parlocation = [100,20,0,[20,0,0,0]]
+>>>>>>> 026f32f61d6b1849f8b74014e2b1dc2503de76e5
 	locations = generatelocations(parlocation[0],parlocation[1],parlocation[2],parlocation[3])
 	generatelocation(locations)
 

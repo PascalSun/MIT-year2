@@ -1,0 +1,8 @@
+/Users/pascal_sun/Google Drive/workplace/Github/MIT-year2/Design/Geogre/c++/c-and-c-version/VirusSimulator.net/obj/Debug/.NETFramework,Version=v4.6.AssemblyAttribute.cs
+/Users/pascal_sun/Google Drive/workplace/Github/MIT-year2/Design/Geogre/c++/c-and-c-version/VirusSimulator.net/bin/Debug/zika.exe.config
+/Users/pascal_sun/Google Drive/workplace/Github/MIT-year2/Design/Geogre/c++/c-and-c-version/VirusSimulator.net/bin/Debug/zika.exe.mdb
+/Users/pascal_sun/Google Drive/workplace/Github/MIT-year2/Design/Geogre/c++/c-and-c-version/VirusSimulator.net/bin/Debug/zika.exe
+/Users/pascal_sun/Google Drive/workplace/Github/MIT-year2/Design/Geogre/c++/c-and-c-version/VirusSimulator.net/obj/Debug/zika.exe
+/Users/pascal_sun/Google Drive/workplace/Github/MIT-year2/Design/Geogre/c++/c-and-c-version/VirusSimulator.net/obj/Debug/zika.exe.mdb
+/Users/pascal_sun/Google Drive/workplace/Github/MIT-year2/Design/Geogre/c++/c-and-c-version/VirusSimulator.net/bin/Debug/MathNet.Numerics.dll
+/Users/pascal_sun/Google Drive/workplace/Github/MIT-year2/Design/Geogre/c++/c-and-c-version/VirusSimulator.net/bin/Debug/Newtonsoft.Json.dll

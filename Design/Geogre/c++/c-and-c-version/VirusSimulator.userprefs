@@ -1,0 +1,10 @@
+﻿<Properties StartupConfiguration="{AE4096FF-79CA-4F4E-9941-B38F0A18300F}|Default">
+  <MonoDevelop.Ide.Workbench />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|x86" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MultiItemStartupConfigurations />
+  <MonoDevelop.Ide.ItemProperties.VirusSimulator.net PreferredExecutionTarget="MonoDevelop.Default" />
+</Properties>
