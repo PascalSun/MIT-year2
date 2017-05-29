@@ -4,9 +4,9 @@
 - Add openMP
 
 ## Libraries needed
-* CMake
-* OpenMP
-* Boost
+* CMake 3.2 or later required
+* Boost 1.57.0 or later
+* python-numpy needed if plotting wanted
 
 It recommended that you use msys2 on Windows, brew on OSX, pacman or apt-get on linux and g++ compiler in order to utilize the package manager.
 
@@ -37,7 +37,7 @@ We have set up a linux machine which can be used to run the prototype
   - login Magnus
   - Load libraries as above
 ### Cmake
-  - Clone it, and `cd ./Epidemica`
+  - upload it to  Magnus, and `cd ./Epidemica`
   - `mkdir build `
   - `cd ./build`
   - `cmake ../`
@@ -47,9 +47,9 @@ We have set up a linux machine which can be used to run the prototype
 ### Run
   - `cd ./bin`
   - Simple Test Run: `./VirusSimulator`
-  - Simple Test Run with openMP: `./VirusSimulator --implementation=OMP`
-  - Run with different test data
-  - Run it with plotting
+  - Simple Test Run with openMP: `./VirusSimulator --implementation=OMP OMP_NUM_THREADS=[number of threads you want to use]`
+  - Run with different test data: `./VirusSimulator --scenario=[absolute path to scenario file or related path on your working directory]`
+  - Run it with plotting: `./VirusSimulator --epicurve`
 
 #### About Test Data
   - the `actual` file include the actual data Joel sent to us
