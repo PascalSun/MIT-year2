@@ -2,20 +2,30 @@
 ## Basic Information
 - Translate original python code to c++
 - Add openMP
+
 ## Libraries needed
 * CMake
 * OpenMP
 * Boost
 
-
 It recommended that you use msys2 on Windows, brew on OSX, pacman or apt-get on linux and g++ compiler in order to utilize the package manager.
 
-Note: as part of turning Epidemica into a single cmake project, support for visual studio has been added
-To setup your environment, please remember to add BOOST_ROOT, GTEST_ROOT, etc. to your environment variables and restart the IDE.
+### To Run on Magnus
+Compiling over Magnus is different than compile it over local machine. This apply to every supercomputers having multiple compile environment, module management and SLURM workload management.
 
-These can be added to the CMakeLists.txt, but they will need to be removed when pushed via git.
+To enable compile it, make sure you have the following module loaded:
+- CMake/3.4.1
+- Boost/1.57.0
+- GNU Program Environment (PrgEnv-gnu)
+- gcc/4.9.2
 
-(If you are having trouble with any libraries, add guides here)
+This can be achieve by module load / swap, by running the following command:
+- `module swap PrgEnv-cray PrgEnv-gnu`
+- `module swap gcc gcc/4.9.2`
+- `module load cmake/3.4.1`
+- `module load boost/1.57.0`
+When finished executing these commands from your logon terminal, you are ready to run `cmake`. after `cmake` finished, you can run `make` to compile the code.
+
 
 ## Running CMake
 This project has been setup with CMake, so it should support cross-platform builds, and be should be fixed otherwise.
@@ -46,21 +56,7 @@ If you use an IDE generator like "Visual Studio 15 2017 x64", open the solution 
 ## Build Toolchains
 Toolchains is essentially cmake code that gets run first, and can be specified when running the cmake command
 
-###Magnus
-Compiling over Magnus is different than compile it over local machine. This apply to every supercomputers having multiple compile environment, module management and SLURM workload management.
 
-To enable compile it, make sure you have the following module loaded:
-- CMake/3.4.1
-- Boost/1.57.0
-- GNU Program Environment (PrgEnv-gnu)
-- gcc/4.9.2
-
-This can be achieve by module load / swap, by running the following command:
-- `module swap PrgEnv-cray PrgEnv-gnu`
-- `module swap gcc gcc/4.9.2`
-- `module load cmake/3.4.1`
-- `module load boost/1.57.0`
-When finished executing these commands from your logon terminal, you are ready to run `cmake`. after `cmake` finished, you can run `make` to compile the code.
 
 ## Installing Libraries for Windows via MinGW
 How to setup MinGW and libs on windows (the linux toolchain way :D)
@@ -136,16 +132,6 @@ Install header files and gcc linked binary
  - add libopencl.a to mingw64/lib
  - - no need to copy opencl.dll to bin as shell and msms2 check windows directories
 
-## GoogleTest (Optional)
-### Windows MSVC Install
-
-- Clone the googletest repository
-- Run it via cmake
-- Open the solution in Visual Studio
-  - switch to Release build
-  - run the Install project
-    - Should install to Program Files somewhere
-  - Add environment variable GTEST_ROOT with the install path
 
 ### Windows MinGW Install
 
