@@ -49,9 +49,18 @@ We have set up a linux machine which can be used to run the prototype
   - Simple Test Run: `./VirusSimulator`
   - Simple Test Run with openMP: `./VirusSimulator --implementation=OMP`
   - Run with different test data
-  - Run it 
+  - Run it with plotting
 
 #### About Test Data
   - the `actual` file include the actual data Joel sent to us
   - the `523` file include data generated randomly with large scenarios
   - the other are some basic test data
+
+## How to clone it for Magnus
+  - Run `ssh-keygen ` in the terminal, and just press `Enter` to finish it
+  - Start agent: `ssh-agent /bin/bash`
+  - add: `ssh-add ~/.ssh/id_rsa`
+  - `ssh-add -l `
+  - show the ssh-key: `cat ~/.ssh/id_rsa.pub`
+  - Copy and Paste it in the setting of bitbucket or github
+  - Reference: https://confluence.atlassian.com/bitbucket/set-up-ssh-for-git-728138079.html
