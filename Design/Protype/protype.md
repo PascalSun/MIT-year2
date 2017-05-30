@@ -1,4 +1,10 @@
 # Prototype for Zika Virus Modelling Project
+## Team Members
+- Simon Xie 21259203
+- Callan Gray 21341958
+- QIANG SUN 21804416
+- Prerna Toppo 21996929
+- Jiaojie Wei 21553103
 ## Basic Information
 - Translate original python code to c++
 - Add openMP
